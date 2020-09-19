@@ -174,7 +174,8 @@ suite('Functional Tests', function() {
 
     // On Gomix we'll use this setting
     /** ### Copy your project's url here  ### **/
-    Browser.site = 'https://sincere-cone.gomix.me';
+    Browser.site = 'https://FCC-Quality-Assurance-Chai.chsq2206.repl.co';
+    // Browser.localhost('example.com', 3000);
 
     // If you are testing on a local environment replace the line above  with
     // Browser.localhost('example.com', (process.env.PORT || 3000));
@@ -237,7 +238,7 @@ suite('Functional Tests', function() {
 
             test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
 
-                { // fill the form...
+                 // fill the form...
                     // then submit it pressing 'submit' button.
                     //
                     // in the callback...
@@ -245,7 +246,7 @@ suite('Functional Tests', function() {
                     // assert that the text inside the element 'span#name' is 'Cristoforo'
                     // assert that the text inside the element 'span#surname' is 'Colombo'
                     // assert that the element(s) 'span#dates' exist and their count is 1
-                }
+
                 browser
                     .fill('surname', 'Colombo')
                     .pressButton('submit', function() {
