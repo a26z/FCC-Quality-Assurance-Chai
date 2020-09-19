@@ -6,7 +6,6 @@ var server = require('../server'); /** import the Express app **/
 var chaiHttp = require('chai-http'); /** require the chai-http plugin **/
 chai.use(chaiHttp); /** use the chai-http plugin **/
 
-
 suite('Functional Tests', function() {
 
     // Mocha allows testing asyncronous operations.
@@ -63,7 +62,6 @@ suite('Functional Tests', function() {
             });
 
             /**  Another one... **/
-            /**  Another one... **/
             test('Test GET /hello with your name', function(done) { // Don't forget the callback...
                 chai.request(server) // 'server' is the Express App
                     .get('/hello?name=Christian') /** <=== Put your name in the query **/
@@ -77,7 +75,6 @@ suite('Functional Tests', function() {
                         done(); // Always call the 'done()' callback when finished.
                     });
             });
-
         });
 
         // In the next example we'll see how to send data in a request payload (body).
@@ -156,9 +153,7 @@ suite('Functional Tests', function() {
                     });
             });
         });
-
     });
-
     // In the next challenges we are going to simulate the human interaction with
     // a page using a device called 'Headless Browser'. A headless browser is a web
     // browser without a graphical user interface. These kind of tools are
@@ -174,10 +169,10 @@ suite('Functional Tests', function() {
 
     // On Gomix we'll use this setting
     /** ### Copy your project's url here  ### **/
-    Browser.site = 'https://sincere-cone.gomix.me';
+    // Browser.site = 'https://sincere-cone.gomix.me';
 
     // If you are testing on a local environment replace the line above  with
-    // Browser.localhost('example.com', (process.env.PORT || 3000));
+    Browser.localhost('example.com', (process.env.PORT || 3000));
 
     suite('e2e Testing with Zombie.js', function() {
         const browser = new Browser();
@@ -250,16 +245,18 @@ suite('Functional Tests', function() {
                     .pressButton('submit', function() {
 
                         /** YOUR TESTS HERE, Don't forget to remove assert.fail() **/
+
                         // pressButton is Async.  Waits for the ajax call to complete...
 
                         // assert that status is OK 200
-                        browser.assert.success();
+
                         // assert that the text inside the element 'span#name' is 'Cristoforo'
-                        browser.assert.text('span#name', 'Cristoforo');
+
                         // assert that the text inside the element 'span#surname' is 'Colombo'
-                        browser.assert.text('span#surname', 'Colombo');
+
                         // assert that the element(s) 'span#dates' exist and their count is 1
-                        browser.assert.element('span#dates', 1);
+
+                        assert.fail();
 
                         done(); // It's an async test, so we have to call 'done()''
                     });
@@ -268,23 +265,15 @@ suite('Functional Tests', function() {
 
             /** Try it again... No help this time **/
             test('submit "surname" : "Vespucci" - write your e2e test...', function(done) {
-                browser
-                    .fill('surname', 'Vespucci')
-                    .pressbutton('submit', function(){
 
                 // fill the form, and submit.
                 // assert that status is OK 200
-                browser.assert.success();
                 // assert that the text inside the element 'span#name' is 'Amerigo'
-                browser.assert.text('span#name', 'Amerigo');
                 // assert that the text inside the element 'span#surname' is 'Vespucci'
-                browser.assert.text('span#surname', 'Vespucci');
                 // assert that the element(s) 'span#dates' exist and their count is 1
-                browser.assert.element('span#dates', 1);
-
+                assert.fail();
                 done();
             });
         });
     });
-});
 });
