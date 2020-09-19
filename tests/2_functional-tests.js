@@ -198,7 +198,7 @@ suite('Functional Tests', function() {
 
         suite('"Famous Italian Explorers" form', function() {
 
-            // In the HTML main view we provided a input form. 
+            // In the HTML main view we provided a input form.
             // It sends data to the "PUT /travellers" endpoint that we used above
             // with an Ajax request. When the request completes successfully the
             // client code appends a <div> containing the infos returned by the call
@@ -237,14 +237,15 @@ suite('Functional Tests', function() {
 
             test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
 
-                // fill the form...
-                // then submit it pressing 'submit' button.
-                //
-                // in the callback...
-                // assert that status is OK 200
-                // assert that the text inside the element 'span#name' is 'Cristoforo'
-                // assert that the text inside the element 'span#surname' is 'Colombo'
-                // assert that the element(s) 'span#dates' exist and their count is 1
+                { // fill the form...
+                    // then submit it pressing 'submit' button.
+                    //
+                    // in the callback...
+                    // assert that status is OK 200
+                    // assert that the text inside the element 'span#name' is 'Cristoforo'
+                    // assert that the text inside the element 'span#surname' is 'Colombo'
+                    // assert that the element(s) 'span#dates' exist and their count is 1
+                }
                 browser
                     .fill('surname', 'Colombo')
                     .pressButton('submit', function() {
@@ -270,21 +271,21 @@ suite('Functional Tests', function() {
             test('submit "surname" : "Vespucci" - write your e2e test...', function(done) {
                 browser
                     .fill('surname', 'Vespucci')
-                    .pressbutton('submit', function(){
+                    .pressButton('submit', function() {
 
-                // fill the form, and submit.
-                // assert that status is OK 200
-                browser.assert.success();
-                // assert that the text inside the element 'span#name' is 'Amerigo'
-                browser.assert.text('span#name', 'Amerigo');
-                // assert that the text inside the element 'span#surname' is 'Vespucci'
-                browser.assert.text('span#surname', 'Vespucci');
-                // assert that the element(s) 'span#dates' exist and their count is 1
-                browser.assert.element('span#dates', 1);
+                        // fill the form, and submit.
+                        // assert that status is OK 200
+                        browser.assert.success();
+                        // assert that the text inside the element 'span#name' is 'Amerigo'
+                        browser.assert.text('span#name', 'Amerigo');
+                        // assert that the text inside the element 'span#surname' is 'Vespucci'
+                        browser.assert.text('span#surname', 'Vespucci');
+                        // assert that the element(s) 'span#dates' exist and their count is 1
+                        browser.assert.element('span#dates', 1);
 
-                done();
+                        done();
+                    });
             });
         });
     });
-});
 });
