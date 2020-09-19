@@ -47,7 +47,7 @@ suite('Unit Tests', function(){
 
   suite('Equality', function() {
     /** 5 - .equal(), .notEqual() **/
-    // .equal() compares objects using '=='
+    // .equal() compares objects using '==' 
     test('#equal, #notEqual', function(){
       assert.equal( 12, '12', 'numbers are coerced into strings with == ');
       assert.notEqual( {value: 1}, {value:1}, '== compares object references');
